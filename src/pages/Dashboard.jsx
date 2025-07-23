@@ -7,10 +7,19 @@ import ProjectSection from "../components/sections/ProjectSection";
 import ContactSection from "@/components/sections/ContactSection";
 import Footer from "../components/sections/Footer";
 
+import { useDarkMode } from "../contexts/DarkModeContext"; // ✔ đúng
+
 function Dashboard() {
+  const { isDarkMode } = useDarkMode();
   return (
     <>
-      <div className="min-h-screen text-white bg-gray-800">
+      <div
+        className={`min-h-screen ${
+          isDarkMode
+            ? "text-white bg-animated-gradient-dark"
+            : "text-gray-700 bg-animated-gradient-light"
+        }`}
+      >
         <Header />
         <main className="pt-14">
           <HeroSection />

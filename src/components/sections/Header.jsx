@@ -1,13 +1,17 @@
-"use client";
-
 import { ChevronDown, Settings } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
+import { useDarkMode } from "../../contexts/DarkModeContext.jsx";
+import { useLanguage } from "../../contexts/LanguageContext.jsx";
+import { translations } from "../../utils/translation.js";
 
 export default function Header() {
   const [isSettingOpen, setIsOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  const [language, setLanguage] = useState("vi");
+  const { isDarkMode, setIsDarkMode } = useDarkMode();
+  const { language, toggleLanguage } = useLanguage();
+
   const dropdownRef = useRef(null);
+
+  const t = translations[language];
 
   const toggleSetting = () => {
     setIsOpen(!isSettingOpen);
@@ -35,7 +39,7 @@ export default function Header() {
     <div className="z-50 fixed top-0 left-0 right-0 bg-black/20 backdrop-blur-md text-white p-4 flex items-center justify-between">
       <div>
         <a href="#" className="font-bold text-2xl">
-          PHAN CÔNG CHÂU
+          {t.name}
         </a>
       </div>
       <nav className="flex space-x-4 mr-8">
@@ -43,31 +47,31 @@ export default function Header() {
           href="#"
           className="hover:scale-105 hover:bg-black/10 transition-transform duration-300 px-3 py-1 rounded-2xl"
         >
-          Trang chủ
+          {t.home}
         </a>
         <a
           href="#"
           className="hover:scale-105 hover:bg-black/10 transition-transform duration-300  px-3 py-1 rounded-2xl"
         >
-          Giới thiệu
+          {t.about}
         </a>
         <a
           href="#"
           className="hover:scale-105 hover:bg-black/10 transition-transform duration-300  px-3 py-1 rounded-2xl"
         >
-          Kỹ năng
+          {t.skills}
         </a>
         <a
           href="#"
           className="hover:scale-105 hover:bg-black/10 transition-transform duration-300  px-3 py-1 rounded-2xl"
         >
-          Dự án
+          {t.projects}
         </a>
         <a
           href="#"
           className="hover:scale-105 hover:bg-black/10 transition-transform duration-300  px-3 py-1 rounded-2xl"
         >
-          Liên hệ
+          {t.contact}
         </a>
         <div className="relative" ref={dropdownRef}>
           <button
@@ -82,7 +86,7 @@ export default function Header() {
             <div className="absolute right-0 mt-4 w-48 bg-black/30 backdrop-blur-md text-white p-4 rounded-xl shadow-xl space-y-4 z-50">
               {/* dark mode toggle */}
               <div className="flex items-center justify-between text-sm">
-                <span>Giao diện</span>
+                <span>{t.theme}</span>
                 <button
                   onClick={() => setIsDarkMode(!isDarkMode)}
                   className={`relative w-16 h-8 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/20 ${
@@ -105,9 +109,9 @@ export default function Header() {
 
               {/* language toggle */}
               <div className="flex items-center justify-between text-sm">
-                <span>Ngôn ngữ</span>
+                <span>{t.language}</span>
                 <button
-                  onClick={() => setLanguage(language === "vi" ? "en" : "vi")}
+                  onClick={toggleLanguage}
                   className={`relative w-16 h-8 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/20 ${
                     language === "en"
                       ? "bg-purple-600 hover:bg-purple-700"

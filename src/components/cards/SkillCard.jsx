@@ -5,7 +5,7 @@ function SkillCard({ icon: Icon, title, skills }) {
   return (
     <div className="flex flex-col bg-black/10 backdrop-blur-md text-white p-6 rounded-xl shadow-lg w-full max-w-sm">
       <div className="flex items-center space-x-2 mb-3">
-        <Icon className="h-6 w-6 text-sky-400" />
+        <Icon className="h-6 w-6 text-yellow-400" />
         <span className="text-lg font-semibold">{title}</span>
       </div>
       <div className="flex flex-wrap gap-2 justify-start">
