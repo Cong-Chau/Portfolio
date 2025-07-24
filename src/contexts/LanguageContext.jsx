@@ -5,9 +5,8 @@ const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
   const getDefaultLanguage = () => {
-    // Ưu tiên localStorage, sau đó là ngôn ngữ trình duyệt
     return (
-      localStorage.getItem("language") ||
+      sessionStorage.getItem("language") ||
       (navigator.language.startsWith("vi") ? "vi" : "en")
     );
   };
@@ -17,7 +16,7 @@ export const LanguageProvider = ({ children }) => {
   const toggleLanguage = () => {
     const newLang = language === "vi" ? "en" : "vi";
     setLanguage(newLang);
-    localStorage.setItem("language", newLang);
+    sessionStorage.setItem("language", newLang);
   };
 
   return (

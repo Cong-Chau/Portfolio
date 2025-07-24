@@ -1,10 +1,17 @@
 import { ChevronDown, Settings } from "lucide-react";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, act } from "react";
 import { useDarkMode } from "../../contexts/DarkModeContext.jsx";
 import { useLanguage } from "../../contexts/LanguageContext.jsx";
 import { translations } from "../../utils/translation.js";
 
-export default function Header() {
+export default function Header({
+  onScrolltoHero,
+  onScrolltoIntrodution,
+  onScrolltoSkill,
+  onScrolltoProject,
+  onScrolltoContact,
+  activeSection,
+}) {
   const [isSettingOpen, setIsOpen] = useState(false);
   const { isDarkMode, setIsDarkMode } = useDarkMode();
   const { language, toggleLanguage } = useLanguage();
@@ -24,12 +31,10 @@ export default function Header() {
       }
     };
 
-    // Add event listener when dropdown is open
     if (isSettingOpen) {
       document.addEventListener("mousedown", handleClickOutside);
     }
 
-    // Cleanup event listener
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
@@ -38,44 +43,62 @@ export default function Header() {
   return (
     <div className="z-50 fixed top-0 left-0 right-0 bg-black/20 backdrop-blur-md text-white p-4 flex items-center justify-between">
       <div>
-        <a href="#" className="font-bold text-2xl">
+        <a
+          onClick={() => {
+            onScrolltoHero();
+            window.location.reload();
+          }}
+          className="font-bold text-2xl hover:cursor-pointer"
+        >
           {t.name}
         </a>
       </div>
       <nav className="flex space-x-4 mr-8">
         <a
-          href="#"
-          className="hover:scale-105 hover:bg-black/10 transition-transform duration-300 px-3 py-1 rounded-2xl"
+          onClick={onScrolltoHero}
+          className={`hover:cursor-pointer hover:scale-105 hover:bg-black/10 transition-transform duration-300 px-3 py-1 rounded-2xl ${
+            activeSection === "hero" ? "border-b-2 border-yellow-400" : ""
+          }`}
         >
           {t.home}
         </a>
         <a
-          href="#"
-          className="hover:scale-105 hover:bg-black/10 transition-transform duration-300  px-3 py-1 rounded-2xl"
+          onClick={onScrolltoIntrodution}
+          className={`hover:cursor-pointer hover:scale-105 hover:bg-black/10 transition-transform duration-300  px-3 py-1 rounded-2xl ${
+            activeSection === "introdution"
+              ? "border-b-2 border-yellow-400"
+              : ""
+          }`}
         >
           {t.about}
         </a>
         <a
-          href="#"
-          className="hover:scale-105 hover:bg-black/10 transition-transform duration-300  px-3 py-1 rounded-2xl"
+          onClick={onScrolltoSkill}
+          className={`hover:cursor-pointer hover:scale-105 hover:bg-black/10 transition-transform duration-300  px-3 py-1 rounded-2xl ${
+            activeSection === "skills" ? "border-b-2 border-yellow-400" : ""
+          }`}
         >
           {t.skills}
         </a>
         <a
-          href="#"
-          className="hover:scale-105 hover:bg-black/10 transition-transform duration-300  px-3 py-1 rounded-2xl"
+          onClick={onScrolltoProject}
+          className={`hover:cursor-pointer hover:scale-105 hover:bg-black/10 transition-transform duration-300  px-3 py-1 rounded-2xl ${
+            activeSection === "projects" ? "border-b-2 border-yellow-400" : ""
+          }`}
         >
           {t.projects}
         </a>
         <a
-          href="#"
-          className="hover:scale-105 hover:bg-black/10 transition-transform duration-300  px-3 py-1 rounded-2xl"
+          onClick={onScrolltoContact}
+          className={`hover:cursor-pointer hover:scale-105 hover:bg-black/10 transition-transform duration-300  px-3 py-1 rounded-2xl ${
+            activeSection === "contact" ? "border-b-2 border-yellow-400" : ""
+          }`}
         >
           {t.contact}
         </a>
         <div className="relative" ref={dropdownRef}>
           <button
-            className="hover:cursor-pointer hover:scale-105 transition-transform duration-300 p-2 rounded-full hover:bg-black/10 flex flex-row items-center justify-center"
+            className="hover:cursor-pointer hover:cursor-pointer hover:scale-105 transition-transform duration-300 p-2 rounded-full hover:bg-black/10 flex flex-row items-center justify-center"
             aria-label="Settings"
             onMouseDown={toggleSetting}
           >
@@ -89,7 +112,7 @@ export default function Header() {
                 <span>{t.theme}</span>
                 <button
                   onClick={() => setIsDarkMode(!isDarkMode)}
-                  className={`relative w-16 h-8 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/20 ${
+                  className={`hover:cursor-pointer relative w-16 h-8 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/20 ${
                     isDarkMode
                       ? "bg-purple-600 hover:bg-purple-700"
                       : "bg-gray-600 hover:bg-gray-500"
@@ -112,7 +135,7 @@ export default function Header() {
                 <span>{t.language}</span>
                 <button
                   onClick={toggleLanguage}
-                  className={`relative w-16 h-8 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/20 ${
+                  className={`hover:cursor-pointer relative w-16 h-8 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/20 ${
                     language === "en"
                       ? "bg-purple-600 hover:bg-purple-700"
                       : "bg-gray-600 hover:bg-gray-500"

@@ -1,15 +1,20 @@
 import { Github, Mail, Phone } from "lucide-react";
-
+import { forwardRef } from "react";
 import { useLanguage } from "../../contexts/LanguageContext.jsx";
 import { translations } from "../../utils/translation.js";
 
-function ContactSection() {
+const ContactSection = forwardRef((props, ref) => {
   const { language } = useLanguage();
   const t = translations[language];
 
   return (
-    <div className="w-full px-4 py-16 flex flex-col items-center justify-center text-center text-white bg-black/10 backdrop-blur-md">
-      <h1 className="text-3xl font-bold">{t.contactMe}</h1>
+    <div
+      ref={ref}
+      className="scroll-mt-14 w-full px-4 py-16 flex flex-col items-center justify-center text-center text-white bg-black/10 backdrop-blur-md"
+    >
+      <h1 className="text-4xl font-bold mb-8 bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
+        {t.contactMe}
+      </h1>
       <p className="mt-4 max-w-xl text-sm text-white">{t.contactDescription}</p>
       <div className="mt-10 flex flex-wrap gap-6 justify-center">
         <div className="flex flex-col items-center w-60 bg-black/10 backdrop-blur-md rounded-lg py-6 px-4 shadow-lg hover:scale-105 hover:bg-black/20 transition-colors duration-200">
@@ -32,6 +37,6 @@ function ContactSection() {
       </div>
     </div>
   );
-}
+});
 
 export default ContactSection;

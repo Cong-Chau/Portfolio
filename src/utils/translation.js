@@ -3,6 +3,7 @@
 export const translations = {
   vi: {
     name: "PHAN CÔNG CHÂU",
+    title: "Lập trình viên Frontend",
     home: "Trang chủ",
     about: "Giới thiệu",
     skills: "Kỹ năng",
@@ -16,9 +17,23 @@ export const translations = {
     github: "github.com/Cong-Chau",
     address: "TP. Hồ Chí Minh, Việt Nam",
     downloadCV: "Tải CV",
+    introduction: "Giới thiệu",
+    aboutMe: "Về tôi",
+    introductionText:
+      "Là sinh viên Công nghệ Thông tin đam mê phát triển giao diện, tôi có kinh nghiệm với React.js, Tailwind CSS và một số công nghệ frontend. Tôi luôn hướng đến trở thành Fullstack Developer",
     objective: "Mục tiêu nghề nghiệp",
     objectiveText:
       "Trở thành Frontend Developer chuyên nghiệp, phát triển lên Fullstack Developer",
+    careerRoadmap: "Lộ trình phát triển",
+    shortTerm: "Ngắn hạn",
+    shortTermGoal:
+      "6-12 tháng: Nâng cao kỹ năng React, học thêm Next.js và TypeScript",
+    mediumTerm: "Trung hạn",
+    mediumTermGoal:
+      "1-2 năm: Phát triển kỹ năng Backend với Node.js, Express, Java và cơ sở dữ liệu",
+    longTerm: "Dài hạn",
+    longTermGoal:
+      "2-5 năm: Trở thành Fullstack Developer, dẫn dắt team và mentor cho junior",
     frontendSkills: "Frontend",
     frameworks: "Frameworks",
     styling: "Styling",
@@ -66,6 +81,7 @@ export const translations = {
   },
   en: {
     name: "PHAN CONG CHAU",
+    title: "Frontend Developer",
     home: "Home",
     about: "About",
     skills: "Skills",
@@ -79,9 +95,23 @@ export const translations = {
     github: "github.com/Cong-Chau",
     address: "Ho Chi Minh City, Vietnam",
     downloadCV: "Download CV",
+    introduction: "Introduction",
+    aboutMe: "About me",
+    introductionText:
+      "As an Information Technology student passionate about frontend development, I have experience with React.js, Tailwind CSS, and various frontend technologies. I aim to become a Fullstack Developer.",
     objective: "Career Objective",
     objectiveText:
       "To become a professional Frontend Developer, progressing to Fullstack Developer",
+    careerRoadmap: "Development Roadmap",
+    shortTerm: "Short-term",
+    shortTermGoal:
+      "6–12 months: Improve React skills, learn Next.js and TypeScript",
+    mediumTerm: "Medium-term",
+    mediumTermGoal:
+      "1–2 years: Develop backend skills with Node.js, Express, Java, and databases",
+    longTerm: "Long-term",
+    longTermGoal:
+      "2–5 years: Become a Fullstack Developer, lead a team, and mentor junior developers",
     frontendSkills: "Frontend",
     frameworks: "Frameworks",
     styling: "Styling",
