@@ -11,7 +11,7 @@ const HeroSection = forwardRef((props, ref) => {
 
   const handleDownload = () => {
     window.open(
-      "https://www.dropbox.com/scl/fi/rk4xorwqef59a6s3dvg4p/PhanCongChau.pdf?rlkey=1gydc63xggblptvwgkvtt0ny1&st=npw4d5r5&dl=1",
+      "https://www.dropbox.com/scl/fi/m7gzjvgodd98el7s0szbp/CV_PhanCongChau.pdf?rlkey=8hpsrfbb8kxpsgxnbxfcofjlm&st=kjo3gey7&dl=1",
       "_blank"
     );
   };
