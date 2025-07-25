@@ -9,6 +9,13 @@ const HeroSection = forwardRef((props, ref) => {
   const { language } = useLanguage();
   const t = translations[language];
 
+  const handleDownload = () => {
+    window.open(
+      "https://www.dropbox.com/scl/fi/rk4xorwqef59a6s3dvg4p/PhanCongChau.pdf?rlkey=1gydc63xggblptvwgkvtt0ny1&st=npw4d5r5&dl=1",
+      "_blank"
+    );
+  };
+
   return (
     <div ref={ref} className="scroll-mt-14 ">
       <div className="md:min-h-[calc(100vh-56px)] flex flex-col items-center justify-center text-center w-full p-8 bg-black/5 backdrop-blur-md hover:cursor-default">
@@ -46,7 +53,10 @@ const HeroSection = forwardRef((props, ref) => {
           </div>
         </div>
         <div className="mt-8">
-          <button className="hover:cursor-pointer w-full h-12 flex items-center space-x-2 text-lg px-3 py-1 rounded-2xl border border-3 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-white transition-colors duration-200">
+          <button
+            className="hover:cursor-pointer w-full h-12 flex items-center space-x-2 text-lg px-3 py-1 rounded-2xl border border-3 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-white transition-colors duration-200"
+            onClick={handleDownload}
+          >
             <Download className="" />
             <span>{t.downloadCV}</span>
           </button>

@@ -27,7 +27,7 @@ const ProjectSection = forwardRef((props, ref) => {
             description={t.project2.description}
             contribution={t.project2.contribution}
             skills={t.project2.skills}
-            link="https://github.com/Cong-Chau/GenerateVideo"
+            link="https://github.com/Cong-Chau/GenerateVideo/tree/main-chau"
           />
           <ProjectCard
             title={t.project3.title}
