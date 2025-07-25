@@ -29,6 +29,7 @@ function ProjectCard({
 
         <div className="text-sm flex-grow mb-2">{description}</div>
 
+        {/* Wrapper để cố định dưới cùng */}
         <div className="mt-auto w-full">
           <div className="text-sm bg-sky-500/10 border-l-4 border-yellow-400 text-yellow-400 px-3 py-2 rounded mb-4">
             <span className="font-bold">{t.contribution}</span>
@@ -48,7 +49,7 @@ function ProjectCard({
 
           <div className="w-full flex justify-center">
             <button
-              className="hover:cursor-pointer border border-yellow-400 text-yellow-400 px-4 py-2 rounded-md text-sm font-semibold flex items-center justify-center gap-2 hover:bg-yellow-400 hover:text-white transition"
+              className="border border-yellow-400 text-yellow-400 px-4 py-2 rounded-md text-sm font-semibold flex items-center justify-center gap-2 hover:bg-yellow-400 hover:text-white transition"
               onClick={handleLinkClick}
             >
               <Github className="w-4 h-4" />

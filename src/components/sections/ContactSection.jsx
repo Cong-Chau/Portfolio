@@ -15,7 +15,9 @@ const ContactSection = forwardRef((props, ref) => {
       <h1 className="text-4xl font-bold mb-8 bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
         {t.contactMe}
       </h1>
-      <p className="mt-4 max-w-xl text-sm text-white">{t.contactDescription}</p>
+      <p className="mt-4 max-w-xl text-sm text-white pl-8 pr-8">
+        {t.contactDescription}
+      </p>
       <div className="mt-10 flex flex-wrap gap-6 justify-center">
         <div className="flex flex-col items-center w-60 bg-black/10 backdrop-blur-md rounded-lg py-6 px-4 shadow-lg hover:scale-105 hover:bg-black/20 transition-colors duration-200">
           <Mail className="w-8 h-8 text-white mb-2" />

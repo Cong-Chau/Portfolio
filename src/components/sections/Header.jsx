@@ -15,9 +15,7 @@ export default function Header({
   const [isSettingOpen, setIsOpen] = useState(false);
   const { isDarkMode, setIsDarkMode } = useDarkMode();
   const { language, toggleLanguage } = useLanguage();
-
   const dropdownRef = useRef(null);
-
   const t = translations[language];
 
   const toggleSetting = () => {
@@ -41,22 +39,22 @@ export default function Header({
   }, [isSettingOpen]);
 
   return (
-    <div className="z-50 fixed top-0 left-0 right-0 bg-black/20 backdrop-blur-md text-white p-4 flex items-center justify-between">
+    <div className="z-50 fixed top-0 left-0 right-0 bg-black/20 backdrop-blur-md text-white p-2 md:p-4 flex items-center justify-between min-h-14">
       <div>
         <a
           onClick={() => {
             onScrolltoHero();
             window.location.reload();
           }}
-          className="font-bold text-2xl hover:cursor-pointer"
+          className="pl-2 md:pl-0 font-bold text-xl md:text-2xl hover:cursor-pointer"
         >
           {t.name}
         </a>
       </div>
-      <nav className="flex space-x-4 mr-8">
+      <nav className="flex items-center space-x-2 md:space-x-4 mr-2 md:mr-8">
         <a
           onClick={onScrolltoHero}
-          className={`hover:cursor-pointer hover:scale-105 hover:bg-black/10 transition-transform duration-300 px-3 py-1 rounded-2xl ${
+          className={`hidden md:block hover:cursor-pointer hover:scale-105 hover:bg-black/10 transition-transform duration-300 px-3 py-1 rounded-2xl ${
             activeSection === "hero" ? "border-b-2 border-yellow-400" : ""
           }`}
         >
@@ -64,7 +62,7 @@ export default function Header({
         </a>
         <a
           onClick={onScrolltoIntrodution}
-          className={`hover:cursor-pointer hover:scale-105 hover:bg-black/10 transition-transform duration-300  px-3 py-1 rounded-2xl ${
+          className={`hidden md:block hover:cursor-pointer hover:scale-105 hover:bg-black/10 transition-transform duration-300  px-3 py-1 rounded-2xl ${
             activeSection === "introdution"
               ? "border-b-2 border-yellow-400"
               : ""
@@ -74,7 +72,7 @@ export default function Header({
         </a>
         <a
           onClick={onScrolltoSkill}
-          className={`hover:cursor-pointer hover:scale-105 hover:bg-black/10 transition-transform duration-300  px-3 py-1 rounded-2xl ${
+          className={`hidden md:block hover:cursor-pointer hover:scale-105 hover:bg-black/10 transition-transform duration-300  px-3 py-1 rounded-2xl ${
             activeSection === "skills" ? "border-b-2 border-yellow-400" : ""
           }`}
         >
@@ -82,7 +80,7 @@ export default function Header({
         </a>
         <a
           onClick={onScrolltoProject}
-          className={`hover:cursor-pointer hover:scale-105 hover:bg-black/10 transition-transform duration-300  px-3 py-1 rounded-2xl ${
+          className={`hidden md:block hover:cursor-pointer hover:scale-105 hover:bg-black/10 transition-transform duration-300  px-3 py-1 rounded-2xl ${
             activeSection === "projects" ? "border-b-2 border-yellow-400" : ""
           }`}
         >
@@ -90,7 +88,7 @@ export default function Header({
         </a>
         <a
           onClick={onScrolltoContact}
-          className={`hover:cursor-pointer hover:scale-105 hover:bg-black/10 transition-transform duration-300  px-3 py-1 rounded-2xl ${
+          className={`hidden md:block hover:cursor-pointer hover:scale-105 hover:bg-black/10 transition-transform duration-300  px-3 py-1 rounded-2xl ${
             activeSection === "contact" ? "border-b-2 border-yellow-400" : ""
           }`}
         >
@@ -98,15 +96,15 @@ export default function Header({
         </a>
         <div className="relative" ref={dropdownRef}>
           <button
-            className="hover:cursor-pointer hover:cursor-pointer hover:scale-105 transition-transform duration-300 p-2 rounded-full hover:bg-black/10 flex flex-row items-center justify-center"
+            className="hover:cursor-pointer hover:scale-105 transition-transform duration-300 p-2 rounded-full hover:bg-black/10 flex flex-row items-center justify-center"
             aria-label="Settings"
             onMouseDown={toggleSetting}
           >
-            <Settings className="w-5 h-5" />
-            <ChevronDown className="w-5 h-5" />
+            <Settings className="w-4 h-4 md:w-5 md:h-5" />
+            <ChevronDown className="w-4 h-4 md:w-5 md:h-5" />
           </button>
           {isSettingOpen && (
-            <div className="absolute right-0 mt-4 w-48 bg-black/30 backdrop-blur-md text-white p-4 rounded-xl shadow-xl space-y-4 z-50">
+            <div className="absolute right-0 mt-2 md:mt-4 w-44 md:w-48 bg-black/30 backdrop-blur-md text-white p-3 md:p-4 rounded-xl shadow-xl space-y-3 md:space-y-4 z-50">
               {/* dark mode toggle */}
               <div className="flex items-center justify-between text-sm">
                 <span>{t.theme}</span>
@@ -129,7 +127,6 @@ export default function Header({
                   </div>
                 </button>
               </div>
-
               {/* language toggle */}
               <div className="flex items-center justify-between text-sm">
                 <span>{t.language}</span>

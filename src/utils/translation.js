@@ -72,6 +72,33 @@ export const translations = {
         "Hệ thống xác thực người dùng, đăng nhập/đăng ký, thông kê doanh thu.",
       skills: ["Handlebars", "Express.js", "Node.js", "MySQL"],
     },
+    project4: {
+      title: "Remote Desktop",
+      completeTime: "11/2024 - 12/2024",
+      description:
+        "Ứng dụng điều khiển máy tính từ xa thông qua mạng LAN sử dụng Windows Socket. Cho phép truyền hình ảnh màn hình, điều khiển chuột và bàn phím từ xa. Dự án được thực hiện theo mô hình client-server, phát triển bằng ngôn ngữ C++.",
+      contribution:
+        "Xây dựng server xử lý socket, gửi hình ảnh màn hình theo thời gian thực.",
+      skills: ["C++", "Windows API", "Winsock", "Multithreading"],
+    },
+    project5: {
+      title: "TikTok UI/UX Clone",
+      completeTime: "03/2025 - Now",
+      description:
+        "Dự án cá nhân mô phỏng lại giao diện người dùng (UI) và trải nghiệm người dùng (UX) của ứng dụng TikTok phiên bản web. Tập trung vào thiết kế tương tác, hiệu ứng chuyển động và responsive layout.",
+      contribution: "Xây dựng toàn bộ giao diện frontend bằng React.",
+      skills: ["React", "React Router", "Responsive Design"],
+    },
+    project6: {
+      title: "Quản lý khóa học (Console App)",
+      completeTime: "04/2023 - 06/2023",
+      description:
+        "Phần mềm quản lý khóa học chạy trên môi trường console, phát triển hoàn toàn bằng C++. Cho phép quản lý thông tin học viên, khóa học, đăng ký học, điểm số và phân loại kết quả.",
+      contribution:
+        "Thiết kế cấu trúc dữ liệu, xây dựng các module quản lý học viên, khóa học, đăng ký và thống kê.",
+      skills: ["C++", "File I/O", "Data Structures"],
+    },
+
     contactMe: "Liên hệ với tôi",
     contactDescription:
       "Tôi luôn sẵn sàng thảo luận về các cơ hội mới và dự án thú vị. Hãy liên hệ với tôi để cùng tạo ra những điều tuyệt vời!",
@@ -150,6 +177,32 @@ export const translations = {
       contribution:
         "User authentication system, login/register, revenue statistics.",
       skills: ["Handlebars", "Express.js", "Node.js", "MySQL"],
+    },
+    project4: {
+      title: "Remote Desktop",
+      completeTime: "11/2024 - 12/2024",
+      description:
+        "A remote desktop application over LAN using Windows Socket. It supports real-time screen sharing and remote control of mouse and keyboard. The project follows the client-server model and is developed in C++.",
+      contribution:
+        "Implemented the server-side socket handling and real-time screen capture transmission.",
+      skills: ["C++", "Windows API", "Winsock", "Multithreading"],
+    },
+    project5: {
+      title: "TikTok UI/UX Clone",
+      completeTime: "03/2025 - Now",
+      description:
+        "A personal project replicating the user interface (UI) and user experience (UX) of TikTok’s web application. Focused on smooth interactions, animation effects, and responsive layout design.",
+      contribution: "Developed the entire frontend with React.",
+      skills: ["React", "React Router", "Responsive Design"],
+    },
+    project6: {
+      title: "Course Management (Console App)",
+      completeTime: "03/2023 - 7/2023",
+      description:
+        "A course management system built entirely in C++, running on the console. Features include student and course management, enrollment, grading, and result classification.",
+      contribution:
+        "Designed data structures and implemented modules for managing students, courses, enrollments, and statistics.",
+      skills: ["C++", "File I/O", "Data Structures"],
     },
     contactMe: "Contact Me",
     contactDescription:

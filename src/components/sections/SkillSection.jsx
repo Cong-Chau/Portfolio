@@ -22,7 +22,7 @@ const SkillSection = forwardRef((props, ref) => {
       <h2 className="text-4xl font-bold mb-8 bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
         {t.skills}
       </h2>
-      <div className="grid grid-cols-3 gap-8 mt-8 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8 max-w-6xl mx-auto">
         <SkillCard icon={Code} title={t.frontendSkills} skills={frontend} />
         <SkillCard icon={Library} title={t.frameworks} skills={framework} />
         <SkillCard icon={PenTool} title={t.styling} skills={styling} />

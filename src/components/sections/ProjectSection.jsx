@@ -6,14 +6,13 @@ import { translations } from "../../utils/translation.js";
 const ProjectSection = forwardRef((props, ref) => {
   const { language } = useLanguage();
   const t = translations[language];
-
   return (
     <div ref={ref} className="scroll-mt-14">
       <div className="flex flex-col items-center justify-center text-center w-full p-8 mt-16 mb-8">
         <h1 className="text-4xl font-bold mb-8 bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
           {t.projectsHighlight}
         </h1>
-        <div className="grid grid-cols-3 gap-8 mt-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8 max-w-6xl mx-auto">
           <ProjectCard
             title={t.project1.title}
             completeTime={t.project1.completeTime}
@@ -37,6 +36,30 @@ const ProjectSection = forwardRef((props, ref) => {
             contribution={t.project3.contribution}
             skills={t.project3.skills}
             link="https://github.com/Cong-Chau/AgentManager"
+          />
+          <ProjectCard
+            title={t.project4.title}
+            completeTime={t.project4.completeTime}
+            description={t.project4.description}
+            contribution={t.project4.contribution}
+            skills={t.project4.skills}
+            link="https://github.com/Cong-Chau/RemoteDesktop"
+          />
+          <ProjectCard
+            title={t.project5.title}
+            completeTime={t.project5.completeTime}
+            description={t.project5.description}
+            contribution={t.project5.contribution}
+            skills={t.project5.skills}
+            link="https://github.com/Cong-Chau/CLone-Tiktok"
+          />
+          <ProjectCard
+            title={t.project6.title}
+            completeTime={t.project6.completeTime}
+            description={t.project6.description}
+            contribution={t.project6.contribution}
+            skills={t.project5.skills}
+            link="https://github.com/Cong-Chau/CourseManage"
           />
         </div>
       </div>

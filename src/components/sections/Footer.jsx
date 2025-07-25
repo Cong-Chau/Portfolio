@@ -8,8 +8,10 @@ function Footer() {
   return (
     <>
       <div className="w-full px-4 py-8 flex flex-col items-center justify-center text-center">
-        <p className="font-bold text-yellow-400 text-sm">{t.copyright}</p>
-        <span className="text-yellow-400 text-sm">{t.hobbies}</span>
+        <p className="font-bold text-yellow-400 text-xs md:text-sm">
+          {t.copyright}
+        </p>
+        <span className="text-yellow-400 text-xs md:text-sm">{t.hobbies}</span>
       </div>
     </>
   );

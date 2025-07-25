@@ -50,7 +50,7 @@ function Dashboard() {
           }
         });
       },
-      { threshold: 0.85 }
+      { threshold: 0.35 }
     );
 
     sectionRefs.forEach(({ ref, id }) => {

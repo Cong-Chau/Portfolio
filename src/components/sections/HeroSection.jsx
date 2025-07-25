@@ -11,21 +11,23 @@ const HeroSection = forwardRef((props, ref) => {
 
   return (
     <div ref={ref} className="scroll-mt-14 ">
-      <div className="min-h-[calc(100vh-56px)] flex flex-col items-center justify-center text-center w-full p-8 bg-black/5 backdrop-blur-md hover:cursor-default">
+      <div className="md:min-h-[calc(100vh-56px)] flex flex-col items-center justify-center text-center w-full p-8 bg-black/5 backdrop-blur-md hover:cursor-default">
         <div className="mb-6">
           <img
             src={chaudeptrai}
             alt=" "
-            className="rounded-full w-80 h-80 object-cover shadow-lg"
+            className="rounded-full w-40 h-40 md:w-80 md:h-80 object-cover shadow-lg"
           />
         </div>
         <div>
-          <h1 className="font-bold text-5xl mt-8 text-white">{t.name}</h1>
+          <h1 className="font-bold text-3xl md:text-5xl mt-8 bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
+            {t.name}
+          </h1>
         </div>
         <div className="mt-4">
           <span className="text-1xl text-white">{t.title}</span>
         </div>
-        <div className="flex flex-row items-center mt-8 justify-center space-x-24 text-white">
+        <div className="flex flex-col md:flex-row items-center mt-8 justify-center md:space-x-24 text-white">
           <div className=" flex items-center space-x-2 text-lg hover:scale-105 transition-transform duration-200 hover:bg-black/10 transition-colors duration-200 px-3 py-1 rounded-2xl">
             <Mail />
             <span>{t.email}</span>
